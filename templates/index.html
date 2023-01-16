@@ -15,14 +15,7 @@
         <li><div></div> - Серый цвет - занятый</li>
     </ul>
     <form class="form-table" action="" method="post">
-        {% csrf_token %}
-<div class="input-block">
-            {% for f in form %}
-                <label class="{{ f.id_for_label }}">{{f.label}}</label>{{f}}
-            {% endfor %}
-            <button type="submit">Заказать стол</button>
-        </div>
-        
+        {% csrf_token %}        
         <div class="block-body-tables">
             {% for table in tables %}
                 <div class="table" id="{{table.number}}" onclick="setTableId(this)" style="
@@ -46,12 +39,12 @@
                 </div> 
             {% endfor %}
         </div>
-        <--<div class="input-block">
+        <div class="input-block">
             {% for f in form %}
                 <label class="{{ f.id_for_label }}">{{f.label}}</label>{{f}}
             {% endfor %}
             <button type="submit">Заказать стол</button>
-        </div>-->
+        </div>
     </form>
     <script>
         function submitForm() {
